@@ -7,7 +7,6 @@ import {
   View,
 } from 'react-native';
 
-import { Font, Components } from 'expo';
 import { Examples } from '@shoutem/ui';
 
 console.disableYellowBox = true;
@@ -18,7 +17,7 @@ class App extends React.Component {
   }
 
   async componentWillMount() {
-    await Font.loadAsync({
+    await Expo.Font.loadAsync({
       'Rubik-Black': require('./node_modules/@shoutem/ui/fonts/Rubik-Black.ttf'),
       'Rubik-BlackItalic': require('./node_modules/@shoutem/ui/fonts/Rubik-BlackItalic.ttf'),
       'Rubik-Bold': require('./node_modules/@shoutem/ui/fonts/Rubik-Bold.ttf'),
@@ -37,7 +36,7 @@ class App extends React.Component {
 
   render() {
     if (!this.state.fontsAreLoaded) {
-      return <Components.AppLoading />;
+      return <Expo.AppLoading />;
     }
 
     return (
