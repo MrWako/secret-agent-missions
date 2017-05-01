@@ -2,7 +2,7 @@ import Expo from 'expo';
 import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { reducer } from './containers/redux.js';
+import { reducer } from './store/reducer.js';
 import { App } from './containers/App.js';
 
 console.disableYellowBox = true;
