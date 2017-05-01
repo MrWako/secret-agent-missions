@@ -8,7 +8,7 @@ export class MissionList extends React.Component {
     this.renderRow = this.renderRow.bind(this);
     this.state = {
       restaurants: [{
-        "name": "Gaspar Brasserie",
+        "name": "Gaspar Brasserie 3",
         "address": "185 Sutter St, San Francisco, CA 94109",
         "image": { "url": "https://shoutem.github.io/restaurants/restaurant-1.jpg" },
       }, {
