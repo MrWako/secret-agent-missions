@@ -1,3 +1,5 @@
+import Immutable from 'immutable';
+
 // The types of actions that you can dispatch to modify the state of the store
 export const types = {
   ADD: 'ADD',
@@ -15,9 +17,7 @@ export const actionCreators = {
 }
 
 // Initial state of the store
-const initialState = {
-  todos: ['Click to remove', 'Learn React Native', 'Write Code', 'Ship App'],
-}
+const initialState = Immutable.Map({ counter: 0 });
 
 // Function to handle actions and update the state of the store.
 // Notes:
@@ -27,23 +27,12 @@ const initialState = {
 //   call reducer() with no state on startup, and we are expected to
 //   return the initial state of the app in this case.
 export const reducer = (state = initialState, action) => {
-  const {todos} = state
-  const {type, payload} = action
-
-  switch (type) {
-    case types.ADD: {
-      return {
-        ...state,
-        todos: [payload, ...todos],
-      }
+  switch (action.type) {
+    case 'INCREMENT':
+      return state.set('counter', state.get('counter') + 1);
+    case 'DECREMENT':
+      return state.set('counter', state.get('counter') - 1);
+    default:
+      return state;
     }
-    case types.REMOVE: {
-      return {
-        ...state,
-        todos: todos.filter((todo, i) => i !== payload),
-      }
-    }
-  }
-
-  return state
 }
