@@ -1,12 +1,18 @@
 import Expo from 'expo';
+import Immutable from 'immutable';
 import React from 'react';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { combineReducers } from 'redux-immutable';
+
 import { reducer } from './store/reducer.js';
 import { App } from './containers/App.js';
 
 console.disableYellowBox = true;
-const store = createStore(reducer);
+
+const initialState = Immutable.Map();
+const rootReducer = combineReducers({});
+const store = createStore(rootReducer, initialState);
 
 class Root extends React.Component {
     render() {
