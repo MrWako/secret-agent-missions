@@ -17,7 +17,7 @@ export const actionCreators = {
 }
 
 // Initial state of the store
-const initialState = Immutable.Map({ counter: 0 });
+const initialState = Immutable.Map({ missions: undefined });
 
 // Function to handle actions and update the state of the store.
 // Notes:
