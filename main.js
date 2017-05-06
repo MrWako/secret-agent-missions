@@ -10,17 +10,25 @@ import { App } from './containers/App.js';
 
 console.disableYellowBox = true;
 
-const initialState = Immutable.Map({missions: undefined});
-const rootReducer = combineReducers({missions: missionsReducer});
-
+const initialState = Immutable.Map({missionsReducer: undefined});
+const rootReducer = combineReducers({missionsReducer: missionsReducer});
 const store = createStore(rootReducer, initialState);
 
+/*
 class Root extends React.Component {
     render() {
       return (
         <Provider store={store}>
           <App />
         </Provider>);
+      }
+}
+*/
+
+class Root extends React.Component {
+    render() {
+      return (
+          <App/>)
       }
 }
 
