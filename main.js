@@ -5,13 +5,13 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { combineReducers } from 'redux-immutable';
 
-import { reducer } from './store/reducer.js';
+import { missionsReducer } from './store/missionsReducer.js';
 import { App } from './containers/App.js';
 
 console.disableYellowBox = true;
 
 const initialState = Immutable.Map({missions: undefined});
-const rootReducer = combineReducers({missions: reducer});
+const rootReducer = combineReducers({missions: missionsReducer});
 
 const store = createStore(rootReducer, initialState);
 

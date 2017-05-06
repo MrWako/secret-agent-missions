@@ -1,7 +1,7 @@
 import React from 'react';
 import { Divider, ListView, Text, View, Image, Tile, Title, Subtitle, Screen} from '@shoutem/ui';
 
-export class MissionList extends React.Component {
+export class MissionsList extends React.Component {
 
   constructor(props) {
     super(props);
