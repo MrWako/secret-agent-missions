@@ -11,7 +11,7 @@ import { App } from './containers/App.js';
 console.disableYellowBox = true;
 
 const initialState = Immutable.Map({missionsReducer: undefined});
-const rootReducer = combineReducers({missionsReducer: missionsReducer});
+const rootReducer = combineReducers({missionsReducer});
 const store = createStore(rootReducer, initialState);
 
 /*
