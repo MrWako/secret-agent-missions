@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 
-import { MissionsList } from '../components/MissionsList.js';
+import { Missions } from '../containers/Missions.js';
 
 export class App extends React.Component {
   state = {
@@ -38,7 +38,7 @@ export class App extends React.Component {
 
     return (
       <View style={{flex: 1}}>
-        <MissionsList/>
+        <Missions/>
       </View>
     );
   }
