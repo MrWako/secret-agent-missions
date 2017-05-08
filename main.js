@@ -14,21 +14,12 @@ const initialState = Immutable.Map({missionsReducer: undefined});
 const rootReducer = combineReducers({missionsReducer});
 const store = createStore(rootReducer, initialState);
 
-/*
 class Root extends React.Component {
     render() {
       return (
         <Provider store={store}>
           <App />
         </Provider>);
-      }
-}
-*/
-
-class Root extends React.Component {
-    render() {
-      return (
-          <App/>)
       }
 }
 

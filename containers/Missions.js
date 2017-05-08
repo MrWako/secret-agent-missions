@@ -1,15 +1,5 @@
-import React from 'react';
-import { View } from 'react-native';
+import { connect } from 'react-redux'
 
 import { MissionsList } from '../components/MissionsList.js';
 
-export class Missions extends React.PureComponent {
-
-  render() {
-    return (
-      <View style={{flex: 1}}>
-        <MissionsList/>
-      </View>
-    );
-  }
-}
+export const Missions = connect()(MissionsList);
