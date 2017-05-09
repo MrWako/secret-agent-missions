@@ -1,4 +1,4 @@
-import Immutable from 'immutable';
+import { fromJS } from 'immutable';
 
 // The types of actions that you can dispatch to modify the state of the store
 export const types = {
@@ -17,7 +17,13 @@ export const actionCreators = {
 }
 
 // Initial state of the store
-const initialState = Immutable.Map({ missionsReducer: undefined });
+const initialState = fromJS([{
+  "name": "Secret Fridge Mission",
+  "image": { "url": "https://shoutem.github.io/restaurants/restaurant-1.jpg" },
+}, {
+  "name": "Nature Base Mission",
+  "image": { "url": "https://shoutem.github.io/restaurants/restaurant-2.jpg" },
+}])
 
 // Function to handle actions and update the state of the store.
 // Notes:
