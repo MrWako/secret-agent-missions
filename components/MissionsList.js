@@ -6,17 +6,6 @@ export class MissionsList extends React.Component {
   constructor(props) {
     super(props);
     this.renderRow = this.renderRow.bind(this);
-    this.state = {
-      restaurants: [{
-        "name": "Gaspar Brasserie",
-        "address": "185 Sutter St, San Francisco, CA 94109",
-        "image": { "url": "https://shoutem.github.io/restaurants/restaurant-1.jpg" },
-      }, {
-        "name": "Chalk Point Kitchen",
-        "address": "527 Broome St, New York, NY 10013",
-        "image": { "url": "https://shoutem.github.io/restaurants/restaurant-2.jpg" },
-      }],
-    }
   }
 
   // this should only be in terms of props
@@ -41,7 +30,7 @@ export class MissionsList extends React.Component {
     return (
       <Screen>
         <ListView
-          data={this.state.restaurants}
+          data={this.props.restaurants}
           renderRow={this.renderRow}
         />
       </Screen>
