@@ -7,13 +7,7 @@ import { MissionsList } from '../components/MissionsList.js';
 // this is where we should convert state to props
 function mapStateToProps(state) {
   return {
-    missions: fromJS([{
-      "name": "Secret Fridge Mission",
-      "image": { "url": "https://shoutem.github.io/restaurants/restaurant-1.jpg" },
-    }, {
-      "name": "Nature Base Mission",
-      "image": { "url": "https://shoutem.github.io/restaurants/restaurant-2.jpg" },
-    }])
+    missions: state.get('missionsReducer')
   };
 }
 
