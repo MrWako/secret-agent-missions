@@ -1,18 +1,17 @@
 import React from 'react';
 import { Divider, ListView, Text, View, Image, Tile, Title, Subtitle, Screen} from '@shoutem/ui';
 
-export class MissionsList extends React.Component {
+export class MissionsList extends React.PureComponent {
 
   // this should only be in terms of props
-  renderRow = (restaurant) => {
+  renderRow = (mission) => {
     return (
       <View>
         <Image
           styleName="large-banner"
-          source={{ uri: restaurant.image.url }}>
+          source={{ uri: mission.image.url }}>
           <Tile>
-            <Title styleName="md-gutter-bottom">{restaurant.name}</Title>
-            <Subtitle styleName="sm-gutter-horizontal">{restaurant.address}</Subtitle>
+            <Title styleName="md-gutter-bottom">{mission.name}</Title>
           </Tile>
         </Image>
         <Divider styleName="line" />
@@ -24,7 +23,7 @@ export class MissionsList extends React.Component {
     return (
       <Screen>
         <ListView
-          data={this.props.restaurants}
+          data={this.props.missions}
           renderRow={this.renderRow}
         />
       </Screen>
