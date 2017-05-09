@@ -10,4 +10,5 @@ Presentational, dumb components:
 Smart container components:
 * Created using the `connect` function and a presentational component.
 * Should interact with the Redux store via the `mapStateToProps`, `mapDispatchToProps` functions.
-* `mapStateToProps` takes the immutable.js store and must return plain javascripts `props`.
+* `mapStateToProps` takes the immutable.js store and must returns immutable primitatives.
+* `toJS` is a higher order component that wraps the presentational container and converts the immutable props to plain javascript props. This pattern has the advantage that shallow comparison on the immutable props ensure we only update the component on true state changes.

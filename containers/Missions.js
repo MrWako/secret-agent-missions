@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from 'react-redux'
 
 import { MissionsList } from '../components/MissionsList.js';
@@ -17,4 +18,10 @@ function mapStateToProps(state) {
   };
 }
 
-export const Missions = connect(mapStateToProps)(MissionsList);
+function toJS(WrappedComponent) {
+  return function(wrappedComponentProps) {
+    return <WrappedComponent restaurants={wrappedComponentProps.restaurants} />
+  }
+}
+
+export const Missions = connect(mapStateToProps)(toJS(MissionsList));
