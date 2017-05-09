@@ -3,14 +3,8 @@ import { Divider, ListView, Text, View, Image, Tile, Title, Subtitle, Screen} fr
 
 export class MissionsList extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.renderRow = this.renderRow.bind(this);
-  }
-
   // this should only be in terms of props
-
-  renderRow(restaurant) {
+  renderRow = (restaurant) => {
     return (
       <View>
         <Image
