@@ -22,8 +22,8 @@ const store = createStore(rootReducer, initialState);
 
 const App = StackNavigator({
   Home: { screen: Home },
-  Edit: { screen: Edit },
   Frontpage: { screen: Frontpage },
+  Edit: { screen: Edit },
   Play: { screen: Play },
 });
 
