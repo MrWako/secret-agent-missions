@@ -8,9 +8,8 @@ import { combineReducers } from 'redux-immutable';
 
 import { Button, Text, View } from 'react-native';
 
-/*
 import { missionsReducer } from './store/missionsReducer.js';
-import { App } from './containers/App.js';
+//import { App } from './containers/App.js';
 
 console.disableYellowBox = true;
 
@@ -18,6 +17,7 @@ const initialState = Immutable.Map();
 const rootReducer = combineReducers({missionsReducer});
 const store = createStore(rootReducer, initialState);
 
+/*
 class Root extends React.Component {
     render() {
       return (
@@ -32,16 +32,15 @@ Expo.registerRootComponent(Root);
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Welcome',
+    title: 'Secret Agent Missions',
   };
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View>
-        <Text>Hello, Chat App!</Text>
         <Button
           onPress={() => navigate('Chat')}
-          title="Chat with Lucy"
+          title="Nature Base Mission"
         />
       </View>
     );
@@ -51,12 +50,12 @@ class HomeScreen extends React.Component {
 
 class ChatScreen extends React.Component {
   static navigationOptions = {
-    title: 'Chat with Lucy',
+    title: 'Nature Base Mission',
   };
   render() {
     return (
       <View>
-        <Text>Chat with Lucy</Text>
+        <Text>Nature Base Mission</Text>
       </View>
     );
   }
@@ -67,4 +66,14 @@ const SimpleApp = StackNavigator({
   Chat: { screen: ChatScreen },
 });
 
-Expo.registerRootComponent(SimpleApp);
+class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <SimpleApp/>
+      </Provider>
+    );
+  }
+}
+
+Expo.registerRootComponent(App);
