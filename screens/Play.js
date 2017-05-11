@@ -7,7 +7,7 @@ export class Play extends React.Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Text>Play<Text>
+        <Text>Play</Text>
       </View>
     );
   }

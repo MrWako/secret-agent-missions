@@ -2,7 +2,7 @@ import Expo from 'expo';
 import React from 'react';
 import { Text, View } from 'react-native';
 
-export class FrontPage extends React.PureComponent {
+export class Frontpage extends React.PureComponent {
 
   render() {
     return (

@@ -9,7 +9,10 @@ import { combineReducers } from 'redux-immutable';
 import { Button, Text, View } from 'react-native';
 
 import { missionsReducer } from './store/missionsReducer.js';
-//import { App } from './containers/App.js';
+import { Edit } from './screens/Edit.js';
+import { Frontpage } from './screens/Frontpage.js';
+import { Home } from './screens/Home.js';
+import { Play } from './screens/Play.js';
 
 console.disableYellowBox = true;
 
@@ -28,7 +31,7 @@ class Root extends React.Component {
 }
 
 Expo.registerRootComponent(Root);
-*/
+
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -61,19 +64,23 @@ class ChatScreen extends React.Component {
   }
 }
 
-const SimpleApp = StackNavigator({
-  Home: { screen: HomeScreen },
-  Chat: { screen: ChatScreen },
+*/
+
+const App = StackNavigator({
+  Home: { screen: Home },
+  Edit: { screen: Edit },
+  Frontpage: { screen: Frontpage },
+  Play: { screen: Play },
 });
 
-class App extends React.Component {
+class Root extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <SimpleApp/>
+        <App/>
       </Provider>
     );
   }
 }
 
-Expo.registerRootComponent(App);
+Expo.registerRootComponent(Root);
