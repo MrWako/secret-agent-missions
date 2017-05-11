@@ -20,52 +20,6 @@ const initialState = Immutable.Map();
 const rootReducer = combineReducers({missionsReducer});
 const store = createStore(rootReducer, initialState);
 
-/*
-class Root extends React.Component {
-    render() {
-      return (
-        <Provider store={store}>
-          <App />
-        </Provider>);
-      }
-}
-
-Expo.registerRootComponent(Root);
-
-
-class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Secret Agent Missions',
-  };
-  render() {
-    const { navigate } = this.props.navigation;
-    return (
-      <View>
-        <Button
-          onPress={() => navigate('Chat')}
-          title="Nature Base Mission"
-        />
-      </View>
-    );
-  }
-}
-
-
-class ChatScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Nature Base Mission',
-  };
-  render() {
-    return (
-      <View>
-        <Text>Nature Base Mission</Text>
-      </View>
-    );
-  }
-}
-
-*/
-
 const App = StackNavigator({
   Home: { screen: Home },
   Edit: { screen: Edit },
@@ -74,7 +28,33 @@ const App = StackNavigator({
 });
 
 class Root extends React.Component {
+
+  state = {
+    fontsAreLoaded: false,
+  }
+
+  async componentDidMount() {
+    await Expo.Font.loadAsync({
+      'Rubik-Black': require('./node_modules/@shoutem/ui/fonts/Rubik-Black.ttf'),
+      'Rubik-BlackItalic': require('./node_modules/@shoutem/ui/fonts/Rubik-BlackItalic.ttf'),
+      'Rubik-Bold': require('./node_modules/@shoutem/ui/fonts/Rubik-Bold.ttf'),
+      'Rubik-BoldItalic': require('./node_modules/@shoutem/ui/fonts/Rubik-BoldItalic.ttf'),
+      'Rubik-Italic': require('./node_modules/@shoutem/ui/fonts/Rubik-Italic.ttf'),
+      'Rubik-Light': require('./node_modules/@shoutem/ui/fonts/Rubik-Light.ttf'),
+      'Rubik-LightItalic': require('./node_modules/@shoutem/ui/fonts/Rubik-LightItalic.ttf'),
+      'Rubik-Medium': require('./node_modules/@shoutem/ui/fonts/Rubik-Medium.ttf'),
+      'Rubik-MediumItalic': require('./node_modules/@shoutem/ui/fonts/Rubik-MediumItalic.ttf'),
+      'Rubik-Regular': require('./node_modules/@shoutem/ui/fonts/Rubik-Regular.ttf'),
+      'rubicon-icon-font': require('./node_modules/@shoutem/ui/fonts/rubicon-icon-font.ttf'),
+    });
+    this.setState({fontsAreLoaded: true});
+  }
+
   render() {
+    if (!this.state.fontsAreLoaded) {
+      return <Expo.AppLoading/>;
+    }
+
     return (
       <Provider store={store}>
         <App/>
