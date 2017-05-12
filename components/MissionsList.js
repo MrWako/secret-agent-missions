@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, ListView, Text, View, Image, Tile, Title, Subtitle, Screen} from '@shoutem/ui';
+import { Divider, ListView, Text, View, Image, Tile, Title, TouchableOpacity, Subtitle, Screen} from '@shoutem/ui';
 
 export class MissionsList extends React.PureComponent {
 
@@ -7,6 +7,7 @@ export class MissionsList extends React.PureComponent {
   renderRow = (mission) => {
     return (
       <View>
+        <TouchableOpacity>
         <Image
           styleName="large-banner"
           source={{ uri: mission.image.url }}>
@@ -14,6 +15,7 @@ export class MissionsList extends React.PureComponent {
             <Title styleName="md-gutter-bottom">{mission.name}</Title>
           </Tile>
         </Image>
+        </TouchableOpacity>
         <Divider styleName="line" />
       </View>
     );
