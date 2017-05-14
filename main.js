@@ -8,7 +8,7 @@ import { combineReducers } from 'redux-immutable';
 
 import { Button, Text, View } from 'react-native';
 
-import { missionsReducer } from './store/missionsReducer.js';
+import { missionSummary } from './store/missionSummary.js';
 import { Edit } from './screens/Edit.js';
 import { Frontpage } from './screens/Frontpage.js';
 import { Home } from './screens/Home.js';
@@ -17,7 +17,7 @@ import { Play } from './screens/Play.js';
 console.disableYellowBox = true;
 
 const initialState = Immutable.Map();
-const rootReducer = combineReducers({missionsReducer});
+const rootReducer = combineReducers({missionSummary});
 const store = createStore(rootReducer, initialState);
 
 const App = StackNavigator({

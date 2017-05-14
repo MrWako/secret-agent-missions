@@ -7,7 +7,7 @@ import { MissionsList } from '../components/MissionsList.js';
 // this is where we should convert state to props
 function mapStateToProps(state) {
   return {
-    missions: state.get('missionsReducer')
+    missionSummary: state.get('missionSummary')
   };
 }
 
@@ -19,7 +19,7 @@ function mapDispatchToProps(dispatch, ownProps) {
 
 function wrap(Component) {
   return function(props) {
-    return <Component missions={props.missions.toJS()} onPress={props.onPress}/>
+    return <Component missionSummary={props.missionSummary.toJS()} onPress={props.onPress}/>
   }
 }
 

@@ -20,9 +20,11 @@ export const actionCreators = {
 const initialState = fromJS([{
   "name": "Secret Fridge Mission",
   "image": { "url": "https://shoutem.github.io/restaurants/restaurant-1.jpg" },
+  "id": 0
 }, {
   "name": "Nature Base Mission",
   "image": { "url": "https://shoutem.github.io/restaurants/restaurant-2.jpg" },
+  "id": 1
 }])
 
 // Function to handle actions and update the state of the store.
@@ -32,7 +34,7 @@ const initialState = fromJS([{
 // - We set \`state\` to our \`initialState\` by default. Redux will
 //   call reducer() with no state on startup, and we are expected to
 //   return the initial state of the app in this case.
-export const missionsReducer = (state = initialState, action) => {
+export const missionSummary= (state = initialState, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return state.set('counter', state.get('counter') + 1);
