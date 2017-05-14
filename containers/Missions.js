@@ -8,13 +8,13 @@ import { MissionsList } from '../components/MissionsList.js';
 function mapStateToProps(state, ownProps) {
   return {
     missions: state.get('missionsReducer'),
-    navigation: ownProps.navigation
+    onPress: () => ownProps.navigation.navigate('Frontpage')
   };
 }
 
 function wrap(Component) {
   return function(props) {
-    return <Component missions={props.missions.toJS()} navigation={props.navigation}/>
+    return <Component missions={props.missions.toJS()} onPress={props.onPress}/>
   }
 }
 

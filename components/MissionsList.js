@@ -52,9 +52,8 @@ export class MissionsList extends React.PureComponent {
           data={this.props.missions}
           renderRow={(rowData, sectionID, rowID) =>
               <MissionsListItem rowData={rowData}
-               onPress={() => {}}/>
+               onPress={() => this.props.onPress()}/>
           }/>
-          <Text onPress={() => this.props.navigation.navigate('Frontpage')}>Home</Text>
       </Screen>
     );
   }
