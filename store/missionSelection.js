@@ -17,17 +17,11 @@ export const actionCreators = {
 }
 
 // Initial state of the store
-const initialState = fromJS([{
-  "name": "Secret Fridge Mission",
-  "image": { "url": "https://shoutem.github.io/restaurants/restaurant-1.jpg" },
-  "id": 0
-}, {
-  "name": "Nature Base Mission",
-  "image": { "url": "https://shoutem.github.io/restaurants/restaurant-2.jpg" },
-  "id": 1
-}])
+const initialState = fromJS({
+  "missionId": 0
+})
 
-export const missionSummary = (state = initialState, action) => {
+export const missionSelection = (state = initialState, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return state.set('counter', state.get('counter') + 1);
