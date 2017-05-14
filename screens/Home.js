@@ -7,11 +7,9 @@ import { Missions } from '../containers/Missions.js';
 export class Home extends React.PureComponent {
 
   render() {
-    const { navigate } = this.props.navigation;
     return (
       <View style={{flex: 1}}>
         <Missions navigation={this.props.navigation}/>
-        <Text onPress={() => navigate('Frontpage')}>Frontpage</Text>
       </View>
     );
   }

@@ -1,27 +1,6 @@
 import React from 'react';
 import { Divider, ListView, Text, View, Image, Tile, Title, TouchableOpacity, Subtitle, Screen} from '@shoutem/ui';
 
-/*
-class MissionsListItem extends React.PureComponent {
-
-  render() {
-    return (
-      <View>
-        <TouchableOpacity>
-        <Image
-          styleName="large-banner"
-          source={{ uri: rowData.image.url }}>
-          <Tile>
-            <Title styleName="md-gutter-bottom">{rowData.name}</Title>
-          </Tile>
-        </Image>
-        </TouchableOpacity>
-        <Divider styleName="line" />
-      </View>
-    );
-  }
-}
-*/
 
 class MissionsListItem extends React.PureComponent {
 
