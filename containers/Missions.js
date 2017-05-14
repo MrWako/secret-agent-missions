@@ -5,15 +5,16 @@ import { connect } from 'react-redux'
 import { MissionsList } from '../components/MissionsList.js';
 
 // this is where we should convert state to props
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
   return {
-    missions: state.get('missionsReducer')
+    missions: state.get('missionsReducer'),
+    navigation: ownProps.navigation
   };
 }
 
 function wrap(Component) {
   return function(props) {
-    return <Component missions={props.missions.toJS()} />
+    return <Component missions={props.missions.toJS()} navigation={props.navigation}/>
   }
 }
 

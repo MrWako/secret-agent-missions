@@ -28,7 +28,7 @@ class MissionsListItem extends React.PureComponent {
   render() {
     return (
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.onPress()}>
         <Image
           styleName="large-banner"
           source={{ uri: this.props.rowData.image.url }}>
@@ -51,8 +51,10 @@ export class MissionsList extends React.PureComponent {
         <ListView
           data={this.props.missions}
           renderRow={(rowData, sectionID, rowID) =>
-              <MissionsListItem rowData={rowData}/>
+              <MissionsListItem rowData={rowData}
+               onPress={() => {}}/>
           }/>
+          <Text onPress={() => this.props.navigation.navigate('Frontpage')}>Home</Text>
       </Screen>
     );
   }
