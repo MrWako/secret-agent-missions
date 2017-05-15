@@ -24,8 +24,8 @@ const initialState = fromJS([{
 const emptyState = fromJS({
   "title": "Title of mission",
   "location": "Location of mission",
-  "image": undefined,
-  "id": undefined
+  "image": "https://shoutem.github.io/restaurants/restaurant-2.jpg",
+  "id": 2
 })
 
 export const missionSummary = (state = initialState, action) => {

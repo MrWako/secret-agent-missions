@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import { MissionsList } from '../components/MissionsList.js';
+import { addMissionSummary } from '../store/missionSummary.js';
 
 // this is where we should convert state to props
 function mapStateToProps(state) {
@@ -13,13 +14,17 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    onPress: () => ownProps.navigation.navigate('Frontpage')
+    onMissionPress: () => ownProps.navigation.navigate('Frontpage'),
+    onAddPress: () => dispatch(addMissionSummary())
   };
 }
 
 function wrap(Component) {
   return function(props) {
-    return <Component missionSummary={props.missionSummary.toJS()} onPress={props.onPress}/>
+    return <Component
+      missionSummary={props.missionSummary.toJS()}
+      onMissionPress={props.onMissionPress}
+      onAddPress={props.onAddPress}/>
   }
 }
 
