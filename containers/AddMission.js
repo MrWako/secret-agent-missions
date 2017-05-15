@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import { AddButton} from '../components/AddButton.js';
+import { addMissionSummary } from '../store/missionSummary.js';
 
 // this is where we should convert state to props
 function mapStateToProps(state) {
@@ -13,7 +14,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onPress: () => {}
+    onPress: () => dispatch(addMissionSummary())
   };
 }
 

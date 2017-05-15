@@ -30,8 +30,8 @@ const emptyState = fromJS({
 
 export const missionSummary = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_MISSION_SUMMARY':
-      return state;
+    case ADD_MISSION_SUMMARY:
+      return state.push(emptyState);
     default:
       return state;
     }
