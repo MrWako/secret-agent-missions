@@ -10,9 +10,9 @@ class MissionsListItem extends React.PureComponent {
         <TouchableOpacity onPress={() => this.props.onPress()}>
         <Image
           styleName="large-banner"
-          source={{ uri: this.props.rowData.image.url }}>
+          source={{ uri: this.props.rowData.image }}>
           <Tile>
-            <Title styleName="md-gutter-bottom">{this.props.rowData.name}</Title>
+            <Title styleName="md-gutter-bottom">{this.props.rowData.title}</Title>
           </Tile>
         </Image>
         </TouchableOpacity>
@@ -26,14 +26,14 @@ export class MissionsList extends React.PureComponent {
 
   render() {
     return (
-      <Screen>
+      <View>
         <ListView
           data={this.props.missionSummary}
           renderRow={(rowData, sectionID, rowID) =>
               <MissionsListItem rowData={rowData}
                onPress={() => this.props.onPress()}/>
           }/>
-      </Screen>
+      </View>
     );
   }
 }
