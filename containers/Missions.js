@@ -26,7 +26,7 @@ function mapDispatchToProps(dispatch, ownProps) {
 function wrap(Component) {
   return function(props) {
     return <Component
-      missionSummary={props.missionSummary.toJS()}
+      missionSummary={props.missionSummary.toList().toJS()}
       onMissionPress={props.onMissionPress}
       onAddPress={props.onAddPress}/>
   }
