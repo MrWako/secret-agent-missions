@@ -27,7 +27,7 @@ export const incrementClueIndex = (id) => {
 
 // Initial state of the store
 const initialState = fromJS({
-  "id": "0",
+  "id": "1",
   "index": 0
 })
 

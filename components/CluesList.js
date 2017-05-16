@@ -7,7 +7,9 @@ class CluesListItem extends React.PureComponent {
   render() {
     return (
       <View>
-        <Text>Clue</Text>
+        <Text>{this.props.rowData.info}</Text>
+        <Text>{this.props.rowData.clue}</Text>
+        <Text>{this.props.rowData.answer}</Text>
         <Divider styleName="line" />
       </View>
     );
@@ -20,10 +22,10 @@ export class CluesList extends React.PureComponent {
     return (
       <View>
         <ListView
-          data={this.props.missionSummary}
+          data={this.props.clues}
           renderRow={(rowData, sectionID, rowID) =>
               <CluesListItem rowData={rowData}/>}
-          renderHeader={() => <View><Text>Missions</Text></View>}
+          renderHeader={() => <View><Text>Clues</Text></View>}
           renderFooter={() => <View><Text onPress={() => this.props.onAddPress()}>Add Clue</Text></View>}
           />
       </View>

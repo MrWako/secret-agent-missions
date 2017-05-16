@@ -15,7 +15,7 @@ const fidgeMission = fromJS({
     "location": "At home",
     "info": "Some additional info",
     "image": "https://shoutem.github.io/restaurants/restaurant-1.jpg",
-    "id": 0
+    "id": "0"
   })
 
 const natureBaseMission = fromJS({
@@ -23,7 +23,7 @@ const natureBaseMission = fromJS({
     "location": "Wales At home",
     "info": "Some additional info",
     "image": "https://shoutem.github.io/restaurants/restaurant-1.jpg",
-    "id": 1
+    "id": "1"
   })
 
 const initialState = OrderedMap({"0": fidgeMission, "1": natureBaseMission})

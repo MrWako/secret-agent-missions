@@ -2,30 +2,29 @@ import { fromJS, toJS } from 'immutable';
 import React from 'react';
 import { connect } from 'react-redux'
 
-import { MissionsList } from '../components/MissionsList.js';
-import { addSummary } from '../store/summary.js';
+import { CluesList } from '../components/CluesList.js';
+import { addClue } from '../store/clues.js';
 
 // this is where we should convert state to props
 function mapStateToProps(state) {
+  id = state.get('selection').get('id')
   return {
-    missionSummary: state.get('missionSummary')
+    clues: state.get('clues').get(id)
   };
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    onMissionPress: () => ownProps.navigation.navigate('Frontpage'),
-    onAddPress: () => dispatch(addMissionSummary())
+    onAddPress: () => dispatch(addClue())
   };
 }
 
 function wrap(Component) {
   return function(props) {
     return <Component
-      missionSummary={props.missionSummary.toJS()}
-      onMissionPress={props.onCluePress}
+      clues={props.clues.toJS()}
       onAddPress={props.onAddPress}/>
   }
 }
 
-export const Missions = connect(mapStateToProps, mapDispatchToProps)(wrap(MissionsList));
+export const Clues = connect(mapStateToProps, mapDispatchToProps)(wrap(CluesList));
