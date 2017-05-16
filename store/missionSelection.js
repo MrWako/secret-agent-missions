@@ -1,32 +1,44 @@
 import { fromJS } from 'immutable';
 
-// The types of actions that you can dispatch to modify the state of the store
-export const types = {
-  ADD: 'ADD',
-  REMOVE: 'REMOVE',
+const SET_MISSION_ID = 'SET_MISSION_ID'
+const RESET_CLUE_INDEX = 'RESET_CLUE_INDEX'
+const INCREMENT_CLUE_INDEX = 'RESET_CLUE_INDEX'
+
+export const selectMission = (id) => {
+  return {
+    type: SELECT_MISSION,
+    id : id
+  }
 }
 
-// Helper functions to dispatch actions, optionally with payloads
-export const actionCreators = {
-  add: (item) => {
-    return {type: types.ADD, payload: item}
-  },
-  remove: (index) => {
-    return {type: types.REMOVE, payload: index}
+export const resetClueIndex = (id) => {
+  return {
+    type: RESET_CLUE_INDEX,
+    id : id
+  }
+}
+
+export const incrementClueIndex = (id) => {
+  return {
+    type: INCREMENT_CLUE_INDEX,
+    id : id
   }
 }
 
 // Initial state of the store
 const initialState = fromJS({
-  "missionId": 0
+  "id": "0",
+  "index": 0
 })
 
 export const missionSelection = (state = initialState, action) => {
   switch (action.type) {
-    case 'INCREMENT':
-      return state.set('counter', state.get('counter') + 1);
-    case 'DECREMENT':
-      return state.set('counter', state.get('counter') - 1);
+    case SET_MISSION_ID:
+      return state.set('id', action.id);
+    case RESET_CLUE_INDEX:
+      return state.set('index', 0);
+    case INCREMENT_CLUE_INDEX:
+      return state.set('index', state.get('index') + 1);
     default:
       return state;
     }

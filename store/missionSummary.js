@@ -13,22 +13,25 @@ export const addMissionSummary = (id) => {
 const fidgeMission = fromJS({
     "title": "Secret Fridge Mission",
     "location": "At home",
+    "info": "Some additional info",
     "image": "https://shoutem.github.io/restaurants/restaurant-1.jpg",
     "id": 0
   })
 
-const NatureBaseMission = fromJS({
+const natureBaseMission = fromJS({
     "title": "Nature Base Mission",
     "location": "Wales At home",
+    "info": "Some additional info",
     "image": "https://shoutem.github.io/restaurants/restaurant-1.jpg",
     "id": 1
   })
 
-const initialState = OrderedMap({"0": fidgeMission, "1": NatureBaseMission})
+const initialState = OrderedMap({"0": fidgeMission, "1": natureBaseMission})
 
 const emptyState = {
   "title": "Title of mission",
   "location": "Location of mission",
+  "info": "Some additional info",
   "image": "https://shoutem.github.io/restaurants/restaurant-2.jpg",
   "id": 2
 }
