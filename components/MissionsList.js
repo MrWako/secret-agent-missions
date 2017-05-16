@@ -28,7 +28,7 @@ export class MissionsList extends React.PureComponent {
     return (
       <View>
         <ListView
-          data={this.props.missionSummary}
+          data={this.props.summary}
           renderRow={(rowData, sectionID, rowID) =>
               <MissionsListItem rowData={rowData}
                onMissionPress={() => this.props.onMissionPress()}/>}

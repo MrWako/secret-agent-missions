@@ -31,7 +31,7 @@ const initialState = fromJS({
   "index": 0
 })
 
-export const missionSelection = (state = initialState, action) => {
+export const selection = (state = initialState, action) => {
   switch (action.type) {
     case SET_MISSION_ID:
       return state.set('id', action.id);

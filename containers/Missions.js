@@ -4,12 +4,12 @@ import { connect } from 'react-redux'
 import uuid from 'uuid'
 
 import { MissionsList } from '../components/MissionsList.js';
-import { addMissionSummary } from '../store/missionSummary.js';
+import { addSummary } from '../store/summary.js';
 
 // this is where we should convert state to props
 function mapStateToProps(state) {
   return {
-    missionSummary: state.get('missionSummary')
+    summary: state.get('summary')
   };
 }
 
@@ -18,7 +18,7 @@ function mapDispatchToProps(dispatch, ownProps) {
     onMissionPress: () => ownProps.navigation.navigate('Frontpage'),
     onAddPress: () => {
       const id = uuid.v1()
-      dispatch(addMissionSummary(id))
+      dispatch(addSummary(id))
     }
   };
 }
@@ -26,7 +26,7 @@ function mapDispatchToProps(dispatch, ownProps) {
 function wrap(Component) {
   return function(props) {
     return <Component
-      missionSummary={props.missionSummary.toList().toJS()}
+      summary={props.summary.toList().toJS()}
       onMissionPress={props.onMissionPress}
       onAddPress={props.onAddPress}/>
   }

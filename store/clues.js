@@ -33,7 +33,7 @@ const emptyState = fromJS([{
     "clue" : "First question",
     "answer" : 0}])
 
-export const missionClues = (state = initialState, action) => {
+export const clues = (state = initialState, action) => {
   switch (action.type) {
     case ADD_CLUE:
       return state

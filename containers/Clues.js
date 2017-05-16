@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import { MissionsList } from '../components/MissionsList.js';
-import { addMissionSummary } from '../store/missionSummary.js';
+import { addSummary } from '../store/summary.js';
 
 // this is where we should convert state to props
 function mapStateToProps(state) {

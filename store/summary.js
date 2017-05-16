@@ -1,10 +1,10 @@
 import { fromJS, OrderedMap } from 'immutable';
 
-const ADD_MISSION_SUMMARY = 'ADD_MISSION_SUMMARY'
+const ADD_SUMMARY = 'ADD_SUMMARY'
 
-export const addMissionSummary = (id) => {
+export const addSummary = (id) => {
   return {
-    type: ADD_MISSION_SUMMARY,
+    type: ADD_SUMMARY,
     id : id
   }
 }
@@ -36,9 +36,9 @@ const emptyState = {
   "id": 2
 }
 
-export const missionSummary = (state = initialState, action) => {
+export const summary = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_MISSION_SUMMARY:
+    case ADD_SUMMARY:
       el = emptyState;
       el.id = action.id;
       return state.set(action.id, fromJS(el));
