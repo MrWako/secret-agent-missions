@@ -31,7 +31,7 @@ export const clues = (state = initialState, action) => {
       if (!state.has(action.missionId)){
         return state.set(action.missionId, List([emptyState]))
       } else {
-        return state.get(action.missionId).push(initialState)
+        return state.set(action.missionId, state.get(action.missionId).push(emptyState))
       }
     default:
       return state;

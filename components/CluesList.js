@@ -26,7 +26,7 @@ export class CluesList extends React.PureComponent {
           renderRow={(rowData, sectionID, rowID) =>
               <CluesListItem rowData={rowData}/>}
           renderHeader={() => <View><Text>Clues</Text></View>}
-          renderFooter={() => <View><Text onPress={() => this.props.onAddPress()}>Add Clue</Text></View>}
+          renderFooter={() => <View><Text onPress={() => this.props.onAddPress(this.props.missionId)}>Add Clue</Text></View>}
           />
       </View>
     );

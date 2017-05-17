@@ -15,7 +15,6 @@ class MissionsListItem extends React.PureComponent {
             <Title styleName="md-gutter-bottom">{this.props.rowData.title}</Title>
           </Tile>
         </Image>
-        <Text>{this.props.rowData.id}</Text>
         </TouchableOpacity>
         <Divider styleName="line" />
       </View>
