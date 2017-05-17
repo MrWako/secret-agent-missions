@@ -15,7 +15,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    onAddPress: () => dispatch(addClue())
+    onAddPress: (id) => dispatch(addClue(id))
   };
 }
 

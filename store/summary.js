@@ -18,15 +18,7 @@ const fidgeMission = fromJS({
     "id": "0"
   })
 
-const natureBaseMission = fromJS({
-    "title": "Nature Base Mission",
-    "location": "Wales At home",
-    "info": "Some additional info",
-    "image": "https://shoutem.github.io/restaurants/restaurant-1.jpg",
-    "id": "1"
-  })
-
-const initialState = OrderedMap({"0": fidgeMission, "1": natureBaseMission})
+const initialState = OrderedMap({"0": fidgeMission})
 
 const emptyState = {
   "title": "Title of mission",

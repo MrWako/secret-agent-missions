@@ -27,13 +27,11 @@ export const incrementClueIndex = (id) => {
 
 // Initial state of the store
 const initialState = Map({
-  "missionId": "1",
+  "missionId": "0",
   "clueIndex": 0
 })
 
 export const selection = (state = initialState, action) => {
-  console.log(state.toJS())
-  console.log(action.missionId)
   switch (action.type) {
     case SET_MISSION_ID:
       return state.set('missionId', action.missionId);

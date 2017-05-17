@@ -5,6 +5,7 @@ import uuid from 'uuid'
 
 import { MissionsList } from '../components/MissionsList.js';
 
+import { addClue } from '../store/clues.js';
 import { setMissionId } from '../store/selection.js';
 import { addSummary } from '../store/summary.js';
 
@@ -24,6 +25,7 @@ function mapDispatchToProps(dispatch, ownProps) {
     onAddPress: () => {
       const id = uuid.v1()
       dispatch(addSummary(id));
+      dispatch(addClue(id));
     }
   };
 }
