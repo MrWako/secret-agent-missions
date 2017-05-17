@@ -15,6 +15,7 @@ class MissionsListItem extends React.PureComponent {
             <Title styleName="md-gutter-bottom">{this.props.rowData.title}</Title>
           </Tile>
         </Image>
+        <Text>{this.props.rowData.id}</Text>
         </TouchableOpacity>
         <Divider styleName="line" />
       </View>
@@ -31,7 +32,7 @@ export class MissionsList extends React.PureComponent {
           data={this.props.summary}
           renderRow={(rowData, sectionID, rowID) =>
               <MissionsListItem rowData={rowData}
-               onMissionPress={() => this.props.onMissionPress()}/>}
+               onMissionPress={() => this.props.onMissionPress(rowData.id)}/>}
           renderHeader={() => <View><Text>Missions</Text></View>}
           renderFooter={() => <View><Text onPress={() => this.props.onAddPress()}>Add Mission</Text></View>}
           />

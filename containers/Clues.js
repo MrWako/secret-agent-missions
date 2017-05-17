@@ -7,9 +7,9 @@ import { addClue } from '../store/clues.js';
 
 // this is where we should convert state to props
 function mapStateToProps(state) {
-  id = state.get('selection').get('id')
+  let missionId = state.get('selection').get('missionId')
   return {
-    clues: state.get('clues').get(id)
+    clues: state.get('clues').get(missionId)
   };
 }
 

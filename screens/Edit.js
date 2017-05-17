@@ -3,10 +3,9 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 import { Clues } from '../containers/Clues.js';
-import { CluesList } from '../components/CluesList.js';
 
 export class Edit extends React.PureComponent {
-
+  
   render() {
     const { navigate } = this.props.navigation;
     return (
