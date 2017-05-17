@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, ListView, Text, View, Image, Tile, Title, TouchableOpacity, Subtitle, Screen} from '@shoutem/ui';
+import { Divider, ListView, Text, View, Image, Tile, Title, TextInput, TouchableOpacity, Subtitle, Screen} from '@shoutem/ui';
 
 
 class CluesListItem extends React.PureComponent {
@@ -7,9 +7,8 @@ class CluesListItem extends React.PureComponent {
   render() {
     return (
       <View>
-        <Text>{this.props.rowData.info}</Text>
-        <Text>{this.props.rowData.clue}</Text>
-        <Text>{this.props.rowData.answer}</Text>
+        <TextInput defaultValue={this.props.rowData.info} onChangeText={() => {}} />
+        <TextInput defaultValue={this.props.rowData.clue} onChangeText={() => {}} />
         <Divider styleName="line" />
       </View>
     );
