@@ -11,7 +11,8 @@ function mapStateToProps(state) {
   console.log(state.get('clues').get(id))
   return {
     missionId: id,
-    clues: state.get('clues').get(id)
+    clues: state.get('clues').get(id),
+    summary: state.get('summary').get(id)
   };
 }
 
@@ -25,6 +26,7 @@ function wrap(Component) {
   return function(props) {
     return <Component
       clues={props.clues.toJS()}
+      summary={props.summary.toJS()}
       missionId={props.missionId}
       onAddPress={props.onAddPress}/>
   }

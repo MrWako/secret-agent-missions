@@ -11,7 +11,7 @@ class MissionsListItem extends React.PureComponent {
           <Row>
             <Image
               styleName="small rounded-corners"
-              source={{ uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-3.png' }}
+              source={{ uri: this.props.rowData.image }}
             />
             <View styleName="vertical stretch space-between">
               <Title styleName="md-gutter-bottom">{this.props.rowData.title}</Title>
