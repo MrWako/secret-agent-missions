@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, ListView, Text, View, Image, Tile, Title, TouchableOpacity, Subtitle, Screen} from '@shoutem/ui';
+import { Button, Caption, Divider, Icon, ListView, Text, View, Image, Row, Tile, Title, TouchableOpacity, Subtitle, Screen} from '@shoutem/ui';
 
 
 class MissionsListItem extends React.PureComponent {
@@ -7,17 +7,22 @@ class MissionsListItem extends React.PureComponent {
   render() {
     return (
       <View>
-        <TouchableOpacity onPress={() => this.props.onMissionPress()}>
-        <Image
-          styleName="medium-square"
-          source={{ uri: this.props.rowData.image }}>
-          <Tile>
-            <Title styleName="md-gutter-bottom">{this.props.rowData.title}</Title>
-          </Tile>
-        </Image>
+          <TouchableOpacity onPress={() => this.props.onMissionPress()}>
+          <Row>
+            <Image
+              styleName="small rounded-corners"
+              source={{ uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-3.png' }}
+            />
+            <View styleName="vertical stretch space-between">
+              <Title styleName="md-gutter-bottom">{this.props.rowData.title}</Title>
+              <Text>{this.props.rowData.location}</Text>
+            </View>
+            <Button styleName="right-icon"><Icon name="add-event" /></Button>
+          </Row>
         </TouchableOpacity>
         <Divider styleName="line" />
       </View>
+
     );
   }
 }
