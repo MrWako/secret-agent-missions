@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImagePicker } from 'expo';
-import { Caption, Divider, Icon, ListView, Text,
+import { Caption, Card, Divider, Icon, ListView, Text,
   View, Image, Row, Tile, Title, TextInput,
   TouchableOpacity, Subtitle, Screen} from '@shoutem/ui';
 
@@ -11,14 +11,16 @@ class CluesListItem extends React.PureComponent {
   render() {
     return (
       <View>
-        <Row>
-          <Icon name="share" />
-          <View styleName="vertical">
-            <Text>{this.props.rowData.clue}</Text>
-          </View>
-          <Icon styleName="disclosure" name="right-arrow" />
-        </Row>
-        <Divider styleName="line" />
+        <TouchableOpacity onPress={() => this.props.onCluePress()}>
+          <Row>
+            <Icon name="share" />
+            <View styleName="vertical">
+              <Text>{this.props.rowData.clue}</Text>
+            </View>
+            <Icon styleName="disclosure" name="right-arrow" />
+          </Row>
+          <Divider styleName="line" />
+        </TouchableOpacity>
       </View>
     );
   }
@@ -66,7 +68,8 @@ export class CluesList extends React.PureComponent {
         <ListView
           data={this.props.clues}
           renderRow={(rowData, sectionID, rowID) =>
-              <CluesListItem rowData={rowData}/>}
+              <CluesListItem rowData={rowData}
+              onCluePress={() => this.props.onCluePress(rowID)}/>}
           renderHeader={() => this.renderHeader()}
           renderFooter={() => <View><Text onPress={() => this.props.onAddPress(this.props.missionId)}>Add Clue</Text></View>}
           />

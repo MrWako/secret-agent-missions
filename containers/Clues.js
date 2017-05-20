@@ -18,7 +18,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    onAddPress: (id) => dispatch(addClue(id))
+    onAddPress: (id) => dispatch(addClue(id)),
+    onCluePress: (id) => {
+      //dispatch(setMissionId(id));
+      ownProps.navigation.navigate('EditClue')
+    },
   };
 }
 
@@ -28,6 +32,7 @@ function wrap(Component) {
       clues={props.clues.toJS()}
       summary={props.summary.toJS()}
       missionId={props.missionId}
+      onCluePress={props.onCluePress}
       onAddPress={props.onAddPress}/>
   }
 }

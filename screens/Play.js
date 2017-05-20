@@ -1,16 +1,16 @@
 import Expo from 'expo';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Screen, Text } from '@shoutem/ui';
 
 export class Play extends React.Component {
 
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={{flex: 1}}>
+      <Screen>
         <Text>Play</Text>
         <Text onPress={() => navigate('Frontpage')}>Frontpage</Text>
-      </View>
+      </Screen>
     );
   }
 }

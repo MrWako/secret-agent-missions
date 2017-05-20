@@ -11,6 +11,7 @@ import { selection } from './store/selection.js';
 import { summary } from './store/summary.js';
 
 import { Edit } from './screens/Edit.js';
+import { EditClue } from './screens/EditClue.js';
 import { Frontpage } from './screens/Frontpage.js';
 import { Home } from './screens/Home.js';
 import { Play } from './screens/Play.js';
@@ -26,6 +27,7 @@ const App = StackNavigator({
   Home: { screen: Home },
   Frontpage: { screen: Frontpage },
   Edit: { screen: Edit },
+  EditClue: { screen: EditClue },
   Play: { screen: Play },
 });
 

@@ -7,7 +7,7 @@ class MissionsListItem extends React.PureComponent {
   render() {
     return (
       <View>
-          <TouchableOpacity onPress={() => this.props.onMissionPress()}>
+        <TouchableOpacity onPress={() => this.props.onMissionPress()}>
           <Row>
             <Image
               styleName="small rounded-corners"
