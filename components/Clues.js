@@ -6,7 +6,7 @@ import { Caption, Card, Divider, Icon, ListView, Text,
 
 
 
-class CluesListItem extends React.PureComponent {
+class CluesItem extends React.PureComponent {
 
   render() {
     return (
@@ -26,7 +26,7 @@ class CluesListItem extends React.PureComponent {
   }
 }
 
-export class CluesList extends React.PureComponent {
+export class Clues extends React.PureComponent {
 
 
   photoPicker = async () => {
@@ -68,7 +68,7 @@ export class CluesList extends React.PureComponent {
         <ListView
           data={this.props.clues}
           renderRow={(rowData, sectionID, rowID) =>
-              <CluesListItem rowData={rowData}
+              <CluesItem rowData={rowData}
               onCluePress={() => this.props.onCluePress(rowID)}/>}
           renderHeader={() => this.renderHeader()}
           renderFooter={() => <View><Text onPress={() => this.props.onAddPress(this.props.missionId)}>Add Clue</Text></View>}

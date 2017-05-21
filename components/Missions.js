@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Caption, Divider, Icon, ListView, Text, View, Image, Row, Tile, Title, TouchableOpacity, Subtitle, Screen} from '@shoutem/ui';
 
 
-class MissionsListItem extends React.PureComponent {
+class MissionsItem extends React.PureComponent {
 
   render() {
     return (
@@ -27,7 +27,7 @@ class MissionsListItem extends React.PureComponent {
   }
 }
 
-export class MissionsList extends React.PureComponent {
+export class Missions extends React.PureComponent {
 
   render() {
     return (
@@ -35,7 +35,7 @@ export class MissionsList extends React.PureComponent {
         <ListView
           data={this.props.summary}
           renderRow={(rowData, sectionID, rowID) =>
-              <MissionsListItem rowData={rowData}
+              <MissionsItem rowData={rowData}
                onMissionPress={() => this.props.onMissionPress(rowData.id)}/>}
           renderHeader={() => <View><Text>Missions</Text></View>}
           renderFooter={() => <View><Text onPress={() => this.props.onAddPress()}>Add Mission</Text></View>}

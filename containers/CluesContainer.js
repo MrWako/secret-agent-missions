@@ -2,7 +2,7 @@ import { fromJS, toJS } from 'immutable';
 import React from 'react';
 import { connect } from 'react-redux'
 
-import { CluesList } from '../components/CluesList.js';
+import { Clues } from '../components/Clues.js';
 import { addClue } from '../store/clues.js';
 import { setClueIndex } from '../store/selection.js';
 
@@ -37,4 +37,4 @@ function wrap(Component) {
   }
 }
 
-export const CluesContainer = connect(mapStateToProps, mapDispatchToProps)(wrap(CluesList));
+export const CluesContainer = connect(mapStateToProps, mapDispatchToProps)(wrap(Clues));
