@@ -2,7 +2,7 @@ import { fromJS, toJS } from 'immutable';
 import React from 'react';
 import { connect } from 'react-redux'
 
-import { EditClue } from '../components/EditClue.js';
+import { PlayClue } from '../components/PlayClue.js';
 import { addClue, setClueInfo, setClueClue } from '../store/clues.js';
 
 // this is where we should convert state to props
@@ -17,9 +17,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    onBarcodePress: () => ownProps.navigation.navigate('SetBarcode'),
-    onInfoChange: (id, index, text) => dispatch(setClueInfo(id, index, text)),
-    onClueChange: (id, index, text) => dispatch(setClueClue(id, index, text))
+    onBarcodePress: () => ownProps.navigation.navigate('CheckBarcode')
   };
 }
 
@@ -28,10 +26,8 @@ function wrap(Component) {
     return <Component
       clue={props.clue.toJS()}
       selection={props.selection.toJS()}
-      onBarcodePress={props.onBarcodePress}
-      onInfoChange={props.onInfoChange}
-      onClueChange={props.onClueChange}/>
+      onBarcodePress={props.onBarcodePress}/>
   }
 }
 
-export const EditClueContainer = connect(mapStateToProps, mapDispatchToProps)(wrap(EditClue));
+export const PlayClueContainer = connect(mapStateToProps, mapDispatchToProps)(wrap(PlayClue));

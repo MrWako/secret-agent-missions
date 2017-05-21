@@ -10,11 +10,13 @@ import { clues } from './store/clues.js';
 import { selection } from './store/selection.js';
 import { summary } from './store/summary.js';
 
+import { SetBarcode } from './screens/SetBarcode.js';
+import { CheckBarcode } from './screens/CheckBarcode.js';
 import { EditMission } from './screens/EditMission.js';
 import { EditClue } from './screens/EditClue.js';
 import { Mission } from './screens/Mission.js';
 import { AllMissions } from './screens/AllMissions.js';
-import { Play } from './screens/Play.js';
+import { PlayClue } from './screens/PlayClue.js';
 
 console.disableYellowBox = true;
 
@@ -25,10 +27,12 @@ const store = createStore(rootReducer, initialState);
 
 const App = StackNavigator({
   AllMissions: { screen: AllMissions },
+  SetBarcode: { screen: SetBarcode },
+  CheckBarcode: { screen: CheckBarcode },
   Mission: { screen: Mission },
   EditMission: { screen: EditMission },
   EditClue: { screen: EditClue },
-  Play: { screen: Play },
+  PlayClue: { screen: PlayClue },
 });
 
 class Root extends React.Component {

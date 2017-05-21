@@ -9,7 +9,7 @@ export class Mission extends React.PureComponent {
     return (
       <Screen>
         <Text>Front Page</Text>
-        <Text onPress={() => navigate('Play')}>Play</Text>
+        <Text onPress={() => navigate('PlayClue')}>Play</Text>
         <Text onPress={() => navigate('EditMission')}>Edit</Text>
         <Text onPress={() => navigate('AllMissions')}>Home</Text>
       </Screen>
