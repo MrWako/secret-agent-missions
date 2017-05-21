@@ -20,7 +20,7 @@ function mapDispatchToProps(dispatch, ownProps) {
   return {
     onMissionPress: (id) => {
       dispatch(setMissionId(id));
-      ownProps.navigation.navigate('Frontpage')
+      ownProps.navigation.navigate('Mission')
     },
     onAddPress: () => {
       const id = uuid.v1()

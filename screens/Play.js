@@ -9,7 +9,7 @@ export class Play extends React.Component {
     return (
       <Screen>
         <Text>Play</Text>
-        <Text onPress={() => navigate('Frontpage')}>Frontpage</Text>
+        <Text onPress={() => navigate('Mission')}>Frontpage</Text>
       </Screen>
     );
   }

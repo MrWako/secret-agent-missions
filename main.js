@@ -10,10 +10,10 @@ import { clues } from './store/clues.js';
 import { selection } from './store/selection.js';
 import { summary } from './store/summary.js';
 
-import { Edit } from './screens/Edit.js';
+import { EditMission } from './screens/EditMission.js';
 import { EditClue } from './screens/EditClue.js';
-import { Frontpage } from './screens/Frontpage.js';
-import { Home } from './screens/Home.js';
+import { Mission } from './screens/Mission.js';
+import { AllMissions } from './screens/AllMissions.js';
 import { Play } from './screens/Play.js';
 
 console.disableYellowBox = true;
@@ -24,9 +24,9 @@ const rootReducer = combineReducers(
 const store = createStore(rootReducer, initialState);
 
 const App = StackNavigator({
-  Home: { screen: Home },
-  Frontpage: { screen: Frontpage },
-  Edit: { screen: Edit },
+  AllMissions: { screen: AllMissions },
+  Mission: { screen: Mission },
+  EditMission: { screen: EditMission },
   EditClue: { screen: EditClue },
   Play: { screen: Play },
 });
