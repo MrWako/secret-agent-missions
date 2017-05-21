@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import uuid from 'uuid'
 
-import { MissionsList } from '../components/MissionsList.js';
+import { Missions } from '../components/Missions.js';
 
 import { addClue } from '../store/clues.js';
 import { setMissionId } from '../store/selection.js';
@@ -20,7 +20,7 @@ function mapDispatchToProps(dispatch, ownProps) {
   return {
     onMissionPress: (id) => {
       dispatch(setMissionId(id));
-      ownProps.navigation.navigate('Frontpage')
+      ownProps.navigation.navigate('Mission')
     },
     onAddPress: () => {
       const id = uuid.v1()
@@ -39,4 +39,4 @@ function wrap(Component) {
   }
 }
 
-export const Missions = connect(mapStateToProps, mapDispatchToProps)(wrap(MissionsList));
+export const MissionsContainer = connect(mapStateToProps, mapDispatchToProps)(wrap(Missions));

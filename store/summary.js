@@ -14,7 +14,7 @@ const fidgeMission = fromJS({
     "title": "Secret Fridge Mission",
     "location": "At home",
     "info": "Some additional info",
-    "image": "https://shoutem.github.io/restaurants/restaurant-1.jpg",
+    "image": "http://shoutem.github.io/img/ui-toolkit/examples/image-3.png",
     "id": "0"
   })
 
@@ -24,7 +24,7 @@ const emptyState = {
   "title": "Title of mission",
   "location": "Location of mission",
   "info": "Some additional info",
-  "image": "https://shoutem.github.io/restaurants/restaurant-2.jpg",
+  "image": "http://shoutem.github.io/img/ui-toolkit/examples/image-3.png",
   "id": 2
 }
 

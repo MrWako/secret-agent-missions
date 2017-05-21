@@ -1,6 +1,7 @@
 import { Map } from 'immutable';
 
 const SET_MISSION_ID = 'SET_MISSION_ID'
+const SET_CLUE_INDEX = 'SET_CLUE_INDEX'
 const RESET_CLUE_INDEX = 'RESET_CLUE_INDEX'
 const INCREMENT_CLUE_INDEX = 'RESET_CLUE_INDEX'
 
@@ -11,17 +12,22 @@ export const setMissionId = (id) => {
   }
 }
 
-export const resetClueIndex = (id) => {
+export const setClueIndex = (index) => {
   return {
-    type: RESET_CLUE_INDEX,
-    missionId : id
+    type: SET_CLUE_INDEX,
+    clueIndex : index
   }
 }
 
-export const incrementClueIndex = (id) => {
+export const resetClueIndex = () => {
   return {
-    type: INCREMENT_CLUE_INDEX,
-    missionId : id
+    type: RESET_CLUE_INDEX
+  }
+}
+
+export const incrementClueIndex = () => {
+  return {
+    type: INCREMENT_CLUE_INDEX
   }
 }
 
@@ -35,6 +41,8 @@ export const selection = (state = initialState, action) => {
   switch (action.type) {
     case SET_MISSION_ID:
       return state.set('missionId', action.missionId);
+    case SET_CLUE_INDEX:
+      return state.set('clueIndex', action.clueIndex);
     case RESET_CLUE_INDEX:
       return state.set('clueIndex', 0);
     case INCREMENT_CLUE_INDEX:

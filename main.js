@@ -10,10 +10,13 @@ import { clues } from './store/clues.js';
 import { selection } from './store/selection.js';
 import { summary } from './store/summary.js';
 
-import { Edit } from './screens/Edit.js';
-import { Frontpage } from './screens/Frontpage.js';
-import { Home } from './screens/Home.js';
-import { Play } from './screens/Play.js';
+import { SetBarcode } from './screens/SetBarcode.js';
+import { CheckBarcode } from './screens/CheckBarcode.js';
+import { EditMission } from './screens/EditMission.js';
+import { EditClue } from './screens/EditClue.js';
+import { Mission } from './screens/Mission.js';
+import { AllMissions } from './screens/AllMissions.js';
+import { PlayClue } from './screens/PlayClue.js';
 
 console.disableYellowBox = true;
 
@@ -23,10 +26,13 @@ const rootReducer = combineReducers(
 const store = createStore(rootReducer, initialState);
 
 const App = StackNavigator({
-  Home: { screen: Home },
-  Frontpage: { screen: Frontpage },
-  Edit: { screen: Edit },
-  Play: { screen: Play },
+  AllMissions: { screen: AllMissions },
+  SetBarcode: { screen: SetBarcode },
+  CheckBarcode: { screen: CheckBarcode },
+  Mission: { screen: Mission },
+  EditMission: { screen: EditMission },
+  EditClue: { screen: EditClue },
+  PlayClue: { screen: PlayClue },
 });
 
 class Root extends React.Component {
