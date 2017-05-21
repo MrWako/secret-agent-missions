@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 
 import { CluesList } from '../components/CluesList.js';
 import { addClue } from '../store/clues.js';
+import { setClueIndex } from '../store/selection.js';
 
 // this is where we should convert state to props
 function mapStateToProps(state) {
   let id = state.get('selection').get('missionId')
-  console.log(state.get('clues').get(id))
   return {
     missionId: id,
     clues: state.get('clues').get(id),
@@ -19,10 +19,10 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch, ownProps) {
   return {
     onAddPress: (id) => dispatch(addClue(id)),
-    onCluePress: (id) => {
-      //dispatch(setMissionId(id));
-      ownProps.navigation.navigate('EditClue')
-    },
+    onCluePress: (index) => {
+      dispatch(setClueIndex(index));
+      ownProps.navigation.navigate('EditClue');
+    }
   };
 }
 
