@@ -39,4 +39,4 @@ function wrap(Component) {
   }
 }
 
-export const Missions = connect(mapStateToProps, mapDispatchToProps)(wrap(MissionsList));
+export const MissionsContainer = connect(mapStateToProps, mapDispatchToProps)(wrap(MissionsList));

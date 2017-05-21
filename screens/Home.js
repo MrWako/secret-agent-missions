@@ -3,8 +3,7 @@ import React from 'react';
 import { Screen, Text } from '@shoutem/ui';
 
 import { Keypad } from '../components/Keypad.js';
-import { BarcodeScanner } from '../components/BarcodeScanner.js';
-import { Missions } from '../containers/Missions.js';
+import { MissionsContainer } from '../containers/MissionsContainer.js';
 
 export class Home extends React.PureComponent {
 
@@ -20,7 +19,7 @@ export class Home extends React.PureComponent {
 
     return (
       <Screen>
-        <Missions navigation={this.props.navigation}/>
+        <MissionsContainer navigation={this.props.navigation}/>
       </Screen>
     );
 

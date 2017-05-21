@@ -37,4 +37,4 @@ function wrap(Component) {
   }
 }
 
-export const Clues = connect(mapStateToProps, mapDispatchToProps)(wrap(CluesList));
+export const CluesContainer = connect(mapStateToProps, mapDispatchToProps)(wrap(CluesList));
