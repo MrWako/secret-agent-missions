@@ -9,8 +9,14 @@ export class EditClue extends React.PureComponent {
   render() {
     return (
       <View>
-        <Text>{this.props.clue.info}</Text>
-        <Text>{this.props.clue.clue}</Text>
+      <TextInput
+        defaultValue={this.props.clue.info}
+        onChangeText={(text) => this.props.onInfoChange(this.props.selection.missionId,
+          this.props.selection.clueIndex, text)}/>
+      <TextInput
+        defaultValue={this.props.clue.clue}
+        onChangeText={(text) => this.props.onClueChange(this.props.selection.missionId,
+          this.props.selection.clueIndex, text)}/>
       </View>
     );
   }

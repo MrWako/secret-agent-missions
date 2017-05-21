@@ -3,28 +3,32 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import { EditClue } from '../components/EditClue.js';
-import { addClue } from '../store/clues.js';
+import { addClue, setClueInfo, setClueClue } from '../store/clues.js';
 
 // this is where we should convert state to props
 function mapStateToProps(state) {
   let id = state.get('selection').get('missionId')
   let index = state.get('selection').get('clueIndex')
-  console.log(state.get('clues').get(id).get(index))
   return {
-    clue: state.get('clues').get(id).get(index)
+    clue: state.get('clues').get(id).get(index),
+    selection: state.get('selection')
   };
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    onAddPress: (id) => {}
+    onInfoChange: (id, index, text) => dispatch(setClueInfo(id, index, text)),
+    onClueChange: (id, index, text) => dispatch(setClueClue(id, index, text))
   };
 }
 
 function wrap(Component) {
   return function(props) {
     return <Component
-      clue={props.clue.toJS()}/>
+      clue={props.clue.toJS()}
+      selection={props.selection.toJS()}
+      onInfoChange={props.onInfoChange}
+      onClueChange={props.onClueChange}/>
   }
 }
 
