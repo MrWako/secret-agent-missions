@@ -9,19 +9,19 @@ export class AllMissions extends React.PureComponent {
 
   render() {
 
-    /*
     return (
-      <View style={{flex: 1}}>
-        <BarcodeScanner/>
-      </View>
+      <Screen>
+        <Keypad/>
+      </Screen>
     );
-    */
 
+    /*
     return (
       <Screen>
         <MissionsContainer navigation={this.props.navigation}/>
       </Screen>
     );
+    */
 
   }
 }

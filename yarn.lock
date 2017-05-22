@@ -2643,6 +2643,10 @@ react-native-drawer-layout@1.2.0:
   dependencies:
     eventemitter3 "^2.0.2"
 
+react-native-gesture-password@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-gesture-password/-/react-native-gesture-password-0.2.0.tgz#938455ff2214cae6c9b5f676c3a692195ef516c4"
+
 react-native-gesture-responder@0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/react-native-gesture-responder/-/react-native-gesture-responder-0.1.1.tgz#802552d8eb7153c0d81a396e98f4b80b404b6798"

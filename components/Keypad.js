@@ -1,36 +1,95 @@
-import React from 'react';
-import {
-    StyleSheet,
-    Alert,
-    View,
-    Text,
-    Dimensions,
-} from 'react-native'
+var React = require('react');
+var PasswordGesture = require('react-native-gesture-password');
 
-import GesturePassword from 'react-native-smart-gesture-password'
-import Button from 'react-native-smart-button'
-
+var Password1 = '';
 export class Keypad extends React.Component {
 
-    constructor (props) {
-        super(props);
-        this.state = {
-            isWarning: false,
-            message: 'Verify your gesture password',
-            messageColor: '#A9A9A9',
-            password: '',
-            thumbnails: [],
-        };
-        this._cachedPassword = ''
+  state = {
+      message: 'Please input your password.',
+      status: 'normal'
     }
 
-    componentDidMount () {
-        this._cachedPassword = '13457' //get cached gesture password
+    // Example for check password
+    onEnd = (password) => {
+        if (password == '123') {
+            this.setState({
+                status: 'right',
+                message: 'Password is right, success.'
+            });
+
+            // your codes to close this view
+        } else {
+            this.setState({
+                status: 'wrong',
+                message: 'Password is wrong, try again.'
+            });
+        }
     }
 
-    render () {
+    onStart = () => {
+        this.setState({
+            status: 'normal',
+            message: 'Please input your password.'
+        });
+    }
+
+    onReset = () => {
+        this.setState({
+            status: 'normal',
+            message: 'Please input your password (again).'
+        });
+    }
+
+    // Example for set password
+    /*
+    onEnd: function(password) {
+        if ( Password1 === '' ) {
+            // The first password
+            Password1 = password;
+            this.setState({
+                status: 'normal',
+                message: 'Please input your password secondly.'
+            });
+        } else {
+            // The second password
+            if ( password === Password1 ) {
+                this.setState({
+                    status: 'right',
+                    message: 'Your password is set to ' + password
+                });
+
+                Password1 = '';
+                // your codes to close this view
+            } else {
+                this.setState({
+                    status: 'wrong',
+                    message:  'Not the same, try again.'
+                });
+            }
+        }
+    },
+    onStart: function() {
+        if ( Password1 === '') {
+            this.setState({
+                message: 'Please input your password.'
+            });
+        } else {
+            this.setState({
+                message: 'Please input your password secondly.'
+            });
+        }
+    },
+    */
+
+    render() {
         return (
-            <GesturePassword/>
-        )
+            <PasswordGesture
+                ref='pg'
+                status={this.state.status}
+                message={this.state.message}
+                onStart={() => this.onStart()}
+                onEnd={(password) => this.onEnd(password)}
+                />
+        );
     }
 }
