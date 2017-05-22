@@ -2,7 +2,7 @@ import Expo from 'expo';
 import React from 'react';
 import { Screen, Text } from '@shoutem/ui';
 
-import { Keypad } from '../components/Keypad.js';
+import { SetPassword } from '../components/SetPassword.js';
 import { MissionsContainer } from '../containers/MissionsContainer.js';
 
 export class AllMissions extends React.PureComponent {
@@ -10,9 +10,7 @@ export class AllMissions extends React.PureComponent {
   render() {
 
     return (
-      <Screen>
-        <Keypad/>
-      </Screen>
+        <SetPassword/>
     );
 
     /*

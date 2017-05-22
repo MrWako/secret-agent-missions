@@ -64,12 +64,6 @@ export const clues = (state = initialState, action) => {
         return state.set(action.missionId, state.get(action.missionId).push(emptyState))
       }
     case SET_CLUE_INFO:
-      console.log(action.info)
-      console.log(action.missionId)
-      console.log(action.clueIndex)
-      console.log(state)
-      new_state = state.setIn([action.missionId, action.clueIndex, "info"], action.info)
-      console.log(new_state)
       return state.setIn([action.missionId, action.clueIndex, "info"], action.info)
     case SET_CLUE_CLUE:
       return state.setIn([action.missionId, action.clueIndex, "clue"], action.clue)
