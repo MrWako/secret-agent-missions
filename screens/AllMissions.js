@@ -9,17 +9,17 @@ export class AllMissions extends React.PureComponent {
 
   render() {
 
+    /*
     return (
         <SetPassword/>
     );
+    */
 
-    /*
     return (
       <Screen>
         <MissionsContainer navigation={this.props.navigation}/>
       </Screen>
     );
-    */
 
   }
 }
